@@ -377,7 +377,7 @@ body {
 #wrong-times {
   color: var(--white-color);
   position: absolute;
-  top: ;
+  top: 2px;
   left: -42.5px;
   width: max-content;
 }
@@ -1241,7 +1241,7 @@ body {
     transform: rotate(90deg);
   }
 }
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   .game-info div {
     font-size: 12px;
   }
@@ -1249,6 +1249,10 @@ body {
     font-size: 14px;
     top: -45px;
     left: -55px;
+  }
+  .guess-word .guess-span {
+    width: 25px;
+    height: 25px;
   }
 }
 @media (max-width: 300px) {
@@ -1310,7 +1314,9 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
+  align-content: flex-start;
   gap: 10px;
+  flex: 2;
 }
 .guess-word .guess-span {
   background-color: var(--black-color);
