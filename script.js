@@ -476,6 +476,7 @@ resetNameBtn.addEventListener("click", () => {
 inputName.onfocus = () => inputName.classList.add("no-event");
 
 window.addEventListener("load", () => {
+  localStorage.setItem("mainName", defaultName);
   if (localStorage.getItem("isDark") === "true") {
     document.getElementById("change-mode").checked = true;
     let headTag = document.getElementsByTagName("head")[0];
