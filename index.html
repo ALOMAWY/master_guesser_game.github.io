@@ -21,19 +21,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap"
+      href="https://fonts.googleapis.com/css2?family=McLaren&display=swap"
       rel="stylesheet"
     />
+    <!-- Add Basmala Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -47,13 +42,13 @@
           <span class="icon"><i class="fa-solid fa-arrow-right"></i> </span>
         </div> -->
         <div class="name-cont">
-          <button id="change-name">
+          <span id="change-name">
             <i class="fa-solid fa-rotate-right"></i>
-          </button>
+          </span>
           <input id="name" type="text" maxlength="17" />
-          <button id="reset-name">
+          <span id="reset-name">
             <i class="fa-solid fa-arrows-rotate"></i>
-          </button>
+          </span>
         </div>
 
         <div class="change-mode">
@@ -73,8 +68,12 @@
       </div>
       <hr />
       <div class="game-draw">
+        <div class="wrong-times-container">
+          <span id="wrong-times"
+            >Number Of Mistake Is : <span>'0 / 10'</span>
+          </span>
+        </div>
         <div id="draw-row-div" class="draw-row">
-          <span id="wrong-times">Number Of Mistake Is : <span>'0'</span></span>
           <div class="gallows">
             <div class="column-stande"></div>
             <div class="gallows-base"></div>

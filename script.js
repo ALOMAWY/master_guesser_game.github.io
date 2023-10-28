@@ -410,8 +410,6 @@ function randomizingValues() {
 
   let nativeArrayWord = [];
 
-  console.log(randomGuessWord);
-
   Array.from(randomGuessWord).forEach((e) => {
     nativeArrayWord.push(e === " " ? "" : e);
   });
@@ -453,8 +451,6 @@ inputName.value = defaultName;
 
 inputName.maxLength = 15;
 
-console.log(document.getElementById("limit-times-input"));
-
 //-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-
 
 // Name Functions
@@ -476,7 +472,10 @@ resetNameBtn.addEventListener("click", () => {
 inputName.onfocus = () => inputName.classList.add("no-event");
 
 window.addEventListener("load", () => {
-  localStorage.setItem("mainName", defaultName);
+  if (localStorage.getItem("mainName") === undefined) {
+    localStorage.setItem("mainName", defaultName);
+  } else {
+  }
   if (localStorage.getItem("isDark") === "true") {
     document.getElementById("change-mode").checked = true;
     let headTag = document.getElementsByTagName("head")[0];
@@ -494,8 +493,6 @@ window.addEventListener("load", () => {
   }
   if (localStorage.getItem("mainName").length > 0) {
     inputName.value = localStorage.getItem("mainName");
-  } else {
-    console.log("Not Complete");
   }
   startPopup();
 
@@ -549,8 +546,6 @@ function clickerWords() {
         let arrayLetter = letter.toLowerCase();
 
         if (theNeededLetter === arrayLetter) {
-          console.log(guessSpansArray);
-
           guessSpansArray[index].innerHTML = theNeededLetter;
 
           theStatus = true;
@@ -576,7 +571,7 @@ function clickerWords() {
       nativeGuessWord = nativeGuessArray.join("").toLowerCase();
       ifGameOver();
 
-      numberOfMistakeSpan.innerHTML = `Number Of Mistake Is : <span>'${wrongTimes}'</span>`;
+      numberOfMistakeSpan.innerHTML = `Number Of Mistake Is : <span>'${wrongTimes} / 10'</span>`;
     }
 
     let basicGuessArray = document.querySelectorAll("basic-span");
@@ -591,7 +586,6 @@ function clickerWords() {
     }
   });
 }
-console.log(document.querySelectorAll(".basic-span"));
 //-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/,
 
 function correctWord() {
@@ -606,8 +600,6 @@ function correctWord() {
   correctWordSpan.textContent = randomGuessWord;
 
   correctWordDiv.appendChild(correctWordSpan);
-
-  console.log(randomGuessWord);
 }
 
 //-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
@@ -736,8 +728,6 @@ if (limitTimesInput.value == "") {
       clickerWords();
 
       submitFunction();
-
-      console.log(`Let's Start : ${localStorage.getItem("mainName")}`);
     }
   });
 }
@@ -866,11 +856,9 @@ function timerToReload() {
   }, 10000);
 }
 
-Array.from(document.querySelector(".words-container").childNodes).forEach(
-  (word) => {
-    console.log(word.innerHTML);
-  }
-);
+// Array.from(document.querySelector(".words-container").childNodes).forEach(
+//   (word) => {}
+// );
 
 let changeModeToggle = document.getElementById("change-mode");
 
@@ -914,8 +902,6 @@ showCorrectBtn.addEventListener("click", () => {
     }
   }, 5000);
 
-  console.log(window.getComputedStyle(nextWord).width);
-
   if (parseInt(window.getComputedStyle(nextWord).right) !== 0) {
     nextWord.style.right = "0px";
   } else if (window.getComputedStyle(nextWord).right === "0px") {
@@ -923,10 +909,6 @@ showCorrectBtn.addEventListener("click", () => {
 
     clearTimeout(closeWordsTap);
   }
-});
-
-document.addEventListener("contextmenu", (e) => {
-  e.preventDefault();
 });
 
 function disebleContainerEvents() {

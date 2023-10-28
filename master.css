@@ -20,7 +20,7 @@ body {
   text-transform: capitalize;
   letter-spacing: 1px;
   line-height: 1.5;
-  font-family: "Indie Flower", cursive;
+  font-family: "McLaren", sans-serif;
   font-weight: 900;
   overflow: hidden;
   max-width: 100%;
@@ -71,15 +71,16 @@ body {
   font-weight: 900;
   text-align: center;
   max-width: fit-content;
+  padding: 10px 20px;
   transition: 0.3s;
+  position: relative;
 }
 
 .name-cont:hover {
   border-radius: 20px;
-  width: 200px;
 }
 
-.name-cont button {
+.name-cont span {
   border: none;
   border-right: 2px solid var(--mov-color);
   background-color: transparent;
@@ -88,15 +89,24 @@ body {
   font-style: italic;
   cursor: pointer;
   color: var(--blue-color);
-  height: 100%;
-  transition: 0.9s ease-in;
+  position: absolute;
+  width: fit-content;
+  height: fit-content;
+}
+.name-cont span:first-child {
+  left: 0;
+  top: 0;
+}
+.name-cont span:last-child {
+  right: 0;
+  top: 0;
 }
 
-.name-cont button i {
+.name-cont span i {
   transition: 0.3s;
 }
 
-.name-cont button:hover i {
+.name-cont span:hover i {
   transform: rotate(360deg);
 }
 
@@ -110,7 +120,9 @@ body {
   letter-spacing: 2px;
   text-align: center;
 }
-
+.name-cont input:focus {
+  outline: none;
+}
 /* Start Change Theme Section */
 
 #change-mode {
@@ -313,8 +325,8 @@ body {
 
 .game-draw .draw-row .the-person {
   position: absolute;
-  top: 2.8rem;
-  left: 10.9rem;
+  top: 2.77rem;
+  left: 10.77rem;
 }
 .game-draw .draw-row .the-person .head {
   border-radius: 50%;
@@ -374,11 +386,15 @@ body {
   transform: rotate(-35deg);
 }
 
+.wrong-times-container {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  left: 50%;
+}
 #wrong-times {
   color: var(--white-color);
-  position: absolute;
-  top: 2px;
-  left: -42.5px;
+
   width: max-content;
 }
 #wrong-times span {
@@ -759,12 +775,16 @@ body {
   .letters-parent div {
     width: 100%;
   }
-
-  .letters-parent {
-    margin-top: 50px;
-  }
 }
 
+@media (max-width: 450px) {
+  .letters-parent .letters-row .letter-span {
+    width: 27px;
+    height: 27px;
+    font-size: 15px;
+    font-weight: lighter;
+  }
+}
 /* Start Buttons Styling */
 .btns {
   display: flex;
@@ -903,7 +923,7 @@ body {
 }
 
 .basmala {
-  font-family: "Baloo Bhaijaan 2", sans-serif;
+  font-family: "Amiri", serif;
   font-size: 4rem;
   color: var(--mov-color);
   margin: 0 20px;
